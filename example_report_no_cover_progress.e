@@ -19,7 +19,7 @@ import sample_env;
 
 // In our example, we want to stop the run If the grade of env.cover_me
 // cover group does not change in 5 samplings.
-extend cb_notify_cover_hit {
+extend cb_notify_no_progress {
     on no_cover_progress {
         message(LOW, "Coverage grade of env.cover_me was not changed ",
                "I am losing hope for this test. Stop it.");
@@ -34,7 +34,7 @@ extend cb_notify_cover_hit {
 extend sys {
     // Instantiate a coverage callback struct
     // (see its implementation in e_util_report_when_cover_hit.e)
-    !cb : cb_notify_cover_hit;
+    !cb : cb_notify_no_progress;
 
     run() is also {
         cb = new;
