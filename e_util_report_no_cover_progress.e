@@ -21,7 +21,7 @@ struct group_info {
     max_samples_wo_progress : uint;
 };
 
-struct cb_notify_cover_hit like cover_sampling_callback {
+struct cb_notify_no_progress like cover_sampling_callback {
     !items_of_interest : list of group_info;
     event no_cover_progress;      
     
